@@ -1,0 +1,26 @@
+{
+  "name": "361-project",
+  "version": "1.0.0",
+  "description": "\"A place for Group 29 to create and share code\"",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wrigjuli/361-Project.git"
+  },
+  "keywords": [],
+  "author": "Group 29",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wrigjuli/361-Project/issues"
+  },
+  "homepage": "https://github.com/wrigjuli/361-Project#readme"
+}
