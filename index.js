@@ -41,12 +41,17 @@ app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
 
+app.get('/', function (req, res, next) {
+    var context = {title:"Home"};
+    res.render('home',context);
+
+});
+
 //This is the test homepage. You can see it is passed a JSON which will eventually be the results JSON
 
-app.get('/', function (req, res, next) {
-    var context = {title:"Search Result",body:JSON.stringify(testSearch.getCharity(3))};
-    res.render('home',context);
-    //The home handlebars is the one I just did a little bit to. 
+app.get('/results', function (req, res, next) {
+    var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
+    res.render('resultspage',context); 
 
 });
 
