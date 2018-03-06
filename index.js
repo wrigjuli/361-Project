@@ -23,8 +23,6 @@ var search = require('./search.js')
 let testSearch = new search("children", cdb);
 testSearch.testMethod();
 
-
-
 //various required modules to host a website with node.js
 
 var express = require('express');
@@ -40,15 +38,14 @@ app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
 
-
+//Home Page
 app.get('/', function (req, res, next) {
     var context = {title:"Home"};
     res.render('home',context);
 
 });
 
-//This is the test homepage. You can see it is passed a JSON which will eventually be the results JSON
-
+//Results Page
 app.get('/results', function (req, res, next) {
     var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
     res.render('resultspage',context); 
@@ -67,5 +64,5 @@ app.use(function(req,res){
   });
   
   app.listen(app.get('port'), function(){
-    console.log('Express started on (# wrong->?) flip3.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
+    console.log('Express started on (# wrong->?) flipx.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
   });
