@@ -4,11 +4,29 @@
 
 <h1>Search Results</h1>
 
+
 <div>
-
-
-{{body}}
-
-
-
+ <table id="tableid">
+ <caption>RESULTS</caption>
+ <thead>
+  <tr>
+   <th>Charity Name</th>
+   <th>Website</th>
+  </tr>
+ </thead>
+ <tbody>
+  {{#each results}}
+  <tr id="{{this.ein}}">
+   <td>{{this.charityName}}</td>
+   <td>{{this.websiteURL}}</td>
+  </tr>
+  {{/each}}
+  </tbody>
+ </table>
 </div>
+
+<!--
+<div>
+{{body}}
+</div>
+-->

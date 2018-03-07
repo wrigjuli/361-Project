@@ -47,7 +47,11 @@ app.get('/', function (req, res, next) {
 
 //Results Page
 app.get('/results', function (req, res, next) {
-    var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
+    //var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
+    var context = {};
+    context.title = "Search Results";
+    context.results = testSearch.getCharity(3);
+    console.log(testSearch.getCharity(3));
     res.render('resultspage',context); 
 
 });
