@@ -8,7 +8,7 @@ This will be our main file. Eventually we will type run forever start index.js a
 */
 
 //This requires the datafile which containes the array of 20 charities. 
-var cArray = require('./data.js')
+var cArray = require('./public/data.js')
 var cdb = cArray.cdb;
 //James
 
