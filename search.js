@@ -43,4 +43,5 @@ module.exports = class Search {
     }
 }
 
+console.log("in search on html")
 

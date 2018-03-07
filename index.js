@@ -42,9 +42,10 @@ app.set('port', process.argv[2]);
 
 
 //This is the test homepage. You can see it is passed a JSON which will eventually be the results JSON
+app.use
 
 app.get('/', function (req, res, next) {
-    var context = {title:"Search Result",body:JSON.stringify(testSearch.getCharity(3))};
+    var context = {title:"Search Result",body:JSON.stringify(testSearch.getCharity(3)),jsScript:'search.js'};
     res.render('home',context);
     //The home handlebars is the one I just did a little bit to. 
 
