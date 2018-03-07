@@ -45,7 +45,7 @@ app.set('port', process.argv[2]);
 
 
 app.get('/', function (req, res, next) {
-    var context = {title:"Search Result",body:JSON.stringify(testSearch.getCharity(3)),jsScript:'search.js'};
+    var context = {title:"Search Result",body:JSON.stringify(testSearch.getCharity(3)),jsScript:'.public/search.js'};
     res.render('home',context);
     //The home handlebars is the one I just did a little bit to. 
 
