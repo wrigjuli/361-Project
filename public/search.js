@@ -47,5 +47,13 @@ console.log("in search on html")
 
 function testButton(){
     console.log("button works")
+    var searchP = "button testing ajax"
+    $.ajax({
+        url: '/' + searchP,
+        type: 'get',
+        success: function(result){
+            window.location.reload(true);
+        }
+    })
 }
 

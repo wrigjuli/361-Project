@@ -42,7 +42,7 @@ app.set('port', process.argv[2]);
 
 
 //This is the test homepage. You can see it is passed a JSON which will eventually be the results JSON
-app.use
+
 
 app.get('/', function (req, res, next) {
     var context = {title:"Search Result",body:JSON.stringify(testSearch.getCharity(3)),jsScript:'search.js'};
@@ -65,3 +65,20 @@ app.use(function(req,res){
   app.listen(app.get('port'), function(){
     console.log('Express started on (# wrong->?) flip3.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
   });
+
+  router.get('/', function(req, res){
+    var callbackCount = 0;
+    var context = {};
+    context.jsScript = ["search.js"];
+    console.log('req' + req);
+    console.log('res' + res);
+    //calls the search function
+    //getProperty(res, mysql, context, complete);
+    function complete(){
+        callbackCount++;
+        if(callbackCount >= 1){
+            res.render('home', context);
+        }
+
+    }
+});
