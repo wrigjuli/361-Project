@@ -17,7 +17,7 @@ Includes the search class accessible under the namespace search
 Type: Class
 Parameter: (searchphrase:string , database:jsonArray)
 */
-var search = require('./search.js')
+var search = require('./public/search.js')
 
 //Showing that the search class works
 let testSearch = new search("children", cdb);
