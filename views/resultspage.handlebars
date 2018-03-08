@@ -4,7 +4,24 @@
 
 <h1>Search Results</h1>
 
+<div>
+ <table id="tableid">
+ <thead>
+  <tr>
+   <th>Charity Name</th>
+  </tr>
+ </thead>
+ <tbody>
+  {{#each results}}
+  <tr id="{{this.ein}}">
+   <td><a href="{{this.websiteURL}}">{{this.charityName}}</a></td>
+  </tr>
+  {{/each}}
+  </tbody>
+ </table>
+</div>
 
+<!-- Testing code
 <div>
  <table id="tableid">
  <thead>
@@ -23,8 +40,9 @@
   </tbody>
  </table>
 </div>
+-->
 
-<!--
+<!-- Original code from James
 <div>
 {{body}}
 </div>
