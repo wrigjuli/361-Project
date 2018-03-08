@@ -50,8 +50,8 @@ app.get('/results', function (req, res, next) {
     //var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
     var context = {};
     context.title = "Search Results";
-    context.results = testSearch.getCharity(3);
-    console.log(testSearch.getCharity(3));
+    var array = testSearch.searchCharities(req.query.name);
+	context.results = array;
     res.render('resultspage',context); 
 
 });
