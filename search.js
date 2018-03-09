@@ -56,6 +56,39 @@ module.exports = class Search {
 		}
 		return array;
 	}
+
+// NEED A BETTER ALGORITHM
+//Function for Location Search?
+        searchLocation(keyword){
+                var array = [];
+                for (var i = 0; i < cdb.length; i++){
+                        var name = cdb[i][charityName];
+                        var city = cdb[i]["mailingAddress.city"];
+                        var state = cdb[i]["mailingAddress.stateOrProvince"];
+                        if (city.indexOf(keyword) != -1 || state.indexOf(keyword) != -1){
+                                console.log(name);
+                                array.push(this.getCharity(i));
+                        }
+                }
+                return array;
+        }
+//
+
+//Function for Type Search?
+        searchType(keyword){
+                var array = [];
+                for (var i = 0; i < cdb.length; i++){
+                        var name = cdb[i][charityName];
+                        var category = cdb[i]["category.categoryName"];
+                        var cause = cdb[i]["cause.causeName"];
+                        if (category.indexOf(keyword) != -1 || cause.indexOf(keyword) != -1){
+                                console.log(name);
+                                array.push(this.getCharity(i));
+                        }
+                }
+                return array;
+        }
+//
 	
 }	
 

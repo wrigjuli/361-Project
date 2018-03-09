@@ -33,6 +33,7 @@ var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
 app.engine('handlebars', handlebars.engine);
+app.use(bodyParser.json());	//to support JSON encoded bodies
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars');
@@ -50,9 +51,27 @@ app.get('/results', function (req, res, next) {
     //var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
     var context = {};
     context.title = "Search Results";
-    var array = testSearch.searchCharities(req.query.name);
-	context.results = array;
+    var array1 = testSearch.searchCharities(req.query.name);
+    var array2 = testSearch.searchCharities(req.query.name);
+    var array3 = testSearch.searchCharities(req.query.name);
+	context.results = array1;
+	context.location = array2;
+	context.type = array3;
     res.render('resultspage',context); 
+});
+
+//TO DO: Results Page
+app.post('/results', urlencodedParser, function (req, res, next) {
+	var data;
+    console.log(req.body);
+    res.render('charitypage',{data:req.body}); 
+});
+
+//TO DO: Charity Page
+app.get('/charityinfo', function (req, res, next) {
+    var context = {};
+    context.title = "Charity Information";
+    res.render('charitypage',context); 
 
 });
 
