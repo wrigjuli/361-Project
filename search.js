@@ -21,7 +21,8 @@ To go within that object to reach a property call cdb[i]["property"]
 
 Example: Set a new variable equal to the mission of the 5th Charity. Uncomment below to see it work. 
 */
-//var mission = cdb[4]["mission"]; console.log(mission);
+//var mission = cdb[4]["mission"]; 
+//console.log(mission);
 /*
 
 */
@@ -41,6 +42,54 @@ module.exports = class Search {
     getCharity(index){
         return cdb[index];
     }
-}
+	
+	searchCharities(keyword){
+		var array = [];
+		for (var i = 0; i < cdb.length; i++){
+			var name = cdb[i]["charityName"];
+			var tag = cdb[i]["tagLine"];
+			var mission = cdb[i]["mission"]
+			if (name.indexOf(keyword) != -1 || tag.indexOf(keyword) != -1 || mission.indexOf(keyword) != -1){
+				console.log(name);
+				array.push(this.getCharity(i));
+			}
+		}
+		return array;
+	}
+
+// NEED A BETTER ALGORITHM
+//Function for Location Search?
+        searchLocation(keyword){
+                var array = [];
+                for (var i = 0; i < cdb.length; i++){
+                        var name = cdb[i][charityName];
+                        var city = cdb[i]["mailingAddress.city"];
+                        var state = cdb[i]["mailingAddress.stateOrProvince"];
+                        if (city.indexOf(keyword) != -1 || state.indexOf(keyword) != -1){
+                                console.log(name);
+                                array.push(this.getCharity(i));
+                        }
+                }
+                return array;
+        }
+//
+
+//Function for Type Search?
+        searchType(keyword){
+                var array = [];
+                for (var i = 0; i < cdb.length; i++){
+                        var name = cdb[i][charityName];
+                        var category = cdb[i]["category.categoryName"];
+                        var cause = cdb[i]["cause.causeName"];
+                        if (category.indexOf(keyword) != -1 || cause.indexOf(keyword) != -1){
+                                console.log(name);
+                                array.push(this.getCharity(i));
+                        }
+                }
+                return array;
+        }
+//
+	
+}	
 
 

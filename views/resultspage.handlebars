@@ -1,0 +1,94 @@
+<!--Return search results depending on the type of search methods (by keyword, by location, by type)-->
+<h1>Search Results</h1>
+<div>
+ <table id="tableid" class="table table-hover">
+ <thead>
+  <tr>
+{{#if results}}
+   <th>Charity by Keyword</th>
+ </tr>
+ </thead>
+ <tbody>
+  {{#each results}}
+  <tr id="{{this.ein}}">
+	<td>
+<a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}" id="name">{{this.charityName}}</a></td>
+  </tr>
+  {{/each}}
+{{/if}}
+
+{{#if location}}
+   <th>Charity by Location </th>
+  </tr>
+ </thead>
+ <tbody>
+  {{#each location}}
+  <tr id="{{this.ein}}">
+	<td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?name={{this.charityName}}">{{this.charityName}}</a></td>
+  </tr>
+  {{/each}}
+{{/if}}
+
+{{#if type}}
+   <th>Charity by Type </th>
+  </tr>
+ </thead>
+ <tbody>
+  {{#each type}}
+  <tr id="{{this.ein}}">
+	<td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?name={{this.charityName}}" onclick="">{{this.charityName}} </a></td>
+  </tr>
+  {{/each}}
+{{/if}}
+  </tbody>
+ </table>
+</div>
+
+<input type="button" value="Go back" onclick="history.back(-1)" />
+
+
+<!-- Cody's code
+<div>
+ <table id="tableid">
+ <thead>
+  <tr>
+   <th>Charity Name</th>
+  </tr>
+ </thead>
+ <tbody>
+  {{#each results}}
+  <tr id="{{this.ein}}">
+   <td><a href="{{this.websiteURL}}">{{this.charityName}}</a></td>
+  </tr>
+  {{/each}}
+  </tbody>
+ </table>
+</div>
+-->
+
+<!-- Testing code
+<div>
+ <table id="tableid">
+ <thead>
+  <tr>
+   <th>Charity Name</th>
+   <th>Website</th>
+  </tr>
+ </thead>
+ <tbody>
+  {{#each results}}
+  <tr id="{{this.ein}}">
+   <td>{{this.charityName}}</td>
+   <td>{{this.websiteURL}}</td>
+  </tr>
+  {{/each}}
+  </tbody>
+ </table>
+</div>
+-->
+
+<!-- Original code from James
+<div>
+{{body}}
+</div>
+-->
