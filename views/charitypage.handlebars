@@ -1,12 +1,9 @@
 <!--Charity Information-->
-<h1>Charity Information</h1>
-<!--TO DO:
-		Connect the user's choice of charity to the this link
-		Use the data from the database to make this page-->
-<h2 ></h2>
-<h2>Name: </h2>
-<p>Overall Score: </p>
-<p>Address: </p>
-<p>Website: </p>
-<p>Charity Mission: </p>
-<input type="button" value="Go back" onclick="history.back(-1)" />
+<h1 style="text-align:center">Charity Information</h1>
+<h4><strong>Charity Name:</strong> {{info.charityName}}</p></h4>
+<p><strong>Overall Score:</strong> {{info.currentRating.rating}}/5</p>
+<p><strong>Address:</strong> </br>{{info.mailingAddress.streetAddress1}}</br>
+{{info.mailingAddress.city}}, {{info.mailingAddress.stateOrProvince}}  {{info.mailingAddress.postalCode}}</p>
+<p><strong>Website:</strong> <a href="{{info.websiteURL}}" style="color:green;">{{info.websiteURL}}</a></p>
+<p><strong>Charity Mission:</strong> {{info.mission}}</p>
+<input type="button" value="Back to search results" onclick="history.back(-1)"/>

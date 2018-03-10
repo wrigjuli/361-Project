@@ -58,6 +58,7 @@ module.exports = class Search {
 	}
 
 //Function for Location Search?
+// throws an error
     searchLocation(keyword){
         var array = [];
         for (var i = 0; i < cdb.length; i++){
@@ -65,7 +66,6 @@ module.exports = class Search {
             var city = cdb[i]["mailingAddress.city"];
             var state = cdb[i]["mailingAddress.stateOrProvince"];
             if (city.indexOf(keyword) != -1 || state.indexOf(keyword) != -1){
-                console.log(name);
                 array.push(this.getCharity(i));
             }
         }
@@ -73,6 +73,7 @@ module.exports = class Search {
     }
 
 //Function for Type Search?
+// throws an error
     searchType(keyword){
         var array = [];
         for (var i = 0; i < cdb.length; i++){

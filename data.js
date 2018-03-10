@@ -747,5 +747,4 @@ var charityArray = [
        _rapid_links: [Object] } } ]
 
        module.exports.cdb = charityArray;
-
-       console.log(charityArray[3].charityNavigatorURL);
+       //console.log(charityArray[3].charityNavigatorURL);

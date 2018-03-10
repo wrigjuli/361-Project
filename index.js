@@ -11,7 +11,6 @@ This will be our main file. Eventually we will type run forever start index.js a
 var cArray = require('./data.js')
 var cdb = cArray.cdb;
 
-
 /*
 Includes the search class accessible under the namespace search
 Type: Class
@@ -24,7 +23,6 @@ let testSearch = new search("children", cdb);
 //testSearch.testMethod();
 
 //various required modules to host a website with node.js
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var router = express.Router();
@@ -60,19 +58,14 @@ app.get('/results', function (req, res, next) {
     res.render('resultspage',context); 
 });
 
-//TO DO: POST from results page
-app.post('/results', function (req, res) {
-    var payload = document.getElementById("anchor").href;
-    res.render('charitypage',payload); 
-
-});
-
-//TO DO: Charity Page
+//Charity Info Page
 app.get('/charityinfo', function (req, res) {
     var context = {};
     context.title = "Charity Information";
+	var charInfo = testSearch.searchCharities(req.query.charityName);
+	context.info = charInfo[0];
+	//console.log(context.info["name"]);
     res.render('charitypage',context); 
-
 });
 
 app.use(function(req,res){

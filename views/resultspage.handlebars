@@ -1,28 +1,17 @@
-<head>
-<script type="text/javascript">
-$(document).ready(function() {
-	$("a#the_link").click(function() {
-		$("div#foo").load("_additional_content.html");
-	});
-});		
-		</script>
-</head>
-<!--Return search results depending on the type of search methods (by keyword, by location, by type)-->
-<h1>Search Results</h1>
+<!-- (Ju) Returns search results depending on the type of search methods (by keyword, by location, by type)-->
+<h1 style="text-align:center">Search Results</h1>
+
 <div>
- <table id="tableid1" class="table table-hover">
- <thead>
-  <tr>
+   <table id="tableid1" class="table table-hover">
+   <thead>
+   <tr>
 {{#if results}}
    <th>Charity by Keyword</th>
- </tr>
- </thead>
- <tbody>
+   </tr></thead>
+   <tbody>
   {{#each results}}
-  <tr id="{{this.ein}}">
-	<td>
-<a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}"><strong>{{this.charityName}}</strong></a></td>
-  	</tr>
+    <tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
   	<tr><td></td></tr>
@@ -30,15 +19,12 @@ $(document).ready(function() {
 {{/if}}
 
 {{#if location}}
-   <th>Charity by Location</th>
- </tr>
- </thead>
- <tbody>
+	<th>Charity by Location</th>
+	</tr></thead>
+ 	<tbody>
   {{#each location}}
-  <tr id="{{this.ein}}">
-	<td>
-<a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}"><strong>{{this.charityName}}</strong></a></td>
-  	</tr>
+  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
   	<tr><td></td></tr>
@@ -46,15 +32,12 @@ $(document).ready(function() {
 {{/if}}
 
 {{#if type}}
-   <th>Charity by type</th>
- </tr>
- </thead>
- <tbody>
-  {{#each type}}
-  <tr id="{{this.ein}}">
-	<td>
-<a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}"><strong>{{this.charityName}}</strong></a></td>
-  	</tr>
+	<th>Charity by type</th>
+ 	</tr></thead>
+ 	<tbody>
+ {{#each type}}
+  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
   	<tr><td></td></tr>
@@ -64,7 +47,7 @@ $(document).ready(function() {
  </table>
 </div>
 
-<input type="button" value="Go back" onclick="history.back(-1)" />
+<input type="button" value="Edit Search" onclick="history.back(-1)" />
 
 
 <!-- Cody's code
