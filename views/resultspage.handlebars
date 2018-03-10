@@ -1,7 +1,16 @@
+<head>
+<script type="text/javascript">
+$(document).ready(function() {
+	$("a#the_link").click(function() {
+		$("div#foo").load("_additional_content.html");
+	});
+});		
+		</script>
+</head>
 <!--Return search results depending on the type of search methods (by keyword, by location, by type)-->
 <h1>Search Results</h1>
 <div>
- <table id="tableid" class="table table-hover">
+ <table id="tableid1" class="table table-hover">
  <thead>
   <tr>
 {{#if results}}
@@ -12,32 +21,43 @@
   {{#each results}}
   <tr id="{{this.ein}}">
 	<td>
-<a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}" id="name">{{this.charityName}}</a></td>
-  </tr>
+<a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}"><strong>{{this.charityName}}</strong></a></td>
+  	</tr>
+  	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
+  	<tr><td>{{this.tagLine}}</td></tr>
+  	<tr><td></td></tr>
   {{/each}}
 {{/if}}
 
 {{#if location}}
-   <th>Charity by Location </th>
-  </tr>
+   <th>Charity by Location</th>
+ </tr>
  </thead>
  <tbody>
   {{#each location}}
   <tr id="{{this.ein}}">
-	<td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?name={{this.charityName}}">{{this.charityName}}</a></td>
-  </tr>
+	<td>
+<a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}"><strong>{{this.charityName}}</strong></a></td>
+  	</tr>
+  	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
+  	<tr><td>{{this.tagLine}}</td></tr>
+  	<tr><td></td></tr>
   {{/each}}
 {{/if}}
 
 {{#if type}}
-   <th>Charity by Type </th>
-  </tr>
+   <th>Charity by type</th>
+ </tr>
  </thead>
  <tbody>
   {{#each type}}
   <tr id="{{this.ein}}">
-	<td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?name={{this.charityName}}" onclick="">{{this.charityName}} </a></td>
-  </tr>
+	<td>
+<a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}"><strong>{{this.charityName}}</strong></a></td>
+  	</tr>
+  	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
+  	<tr><td>{{this.tagLine}}</td></tr>
+  	<tr><td></td></tr>
   {{/each}}
 {{/if}}
   </tbody>
