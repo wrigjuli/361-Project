@@ -1,0 +1,13 @@
+<!--Charity Information-->
+<h1>Charity Information</h1>
+<!--TO DO:
+		Connect the user's choice of charity to the this link
+		Use the data from the database to make this page-->
+<h2 ></h2>
+<h2>Name: {{info.charityName}}</h2>
+<p>Overall Score: {{info.currentRating.rating}}/5</p>
+<p>Address: </br>{{info.mailingAddress.streetAddress1}}</br>
+{{info.mailingAddress.city}}, {{info.mailingAddress.stateOrProvince}}  {{info.mailingAddress.postalCode}}</p>
+<p>Website: <a href="{{info.websiteURL}}" style="color:green;">{{info.websiteURL}}</a></p>
+<p>Charity Mission: {{info.mission}}</p>
+<input type="button" value="Go back" onclick="history.back(-1)" />

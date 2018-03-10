@@ -21,7 +21,7 @@ var search = require('./search.js')
 
 //Showing that the search class works
 let testSearch = new search("children", cdb);
-testSearch.testMethod();
+//testSearch.testMethod();
 
 //various required modules to host a website with node.js
 
@@ -33,7 +33,6 @@ var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 
 app.engine('handlebars', handlebars.engine);
-app.use(bodyParser.urlencoded({extended:true}));
 app.use('/static', express.static('public'));
 app.set('view engine', 'handlebars');
 app.set('port', process.argv[2]);
@@ -50,9 +49,33 @@ app.get('/results', function (req, res, next) {
     //var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
     var context = {};
     context.title = "Search Results";
-    var array = testSearch.searchCharities(req.query.name);
-	context.results = array;
+    var array1 = testSearch.searchCharities(req.query.name);
+	context.results = array1;
+	/* Attempt to search by location and search by type (JU)
+	var array2 = testSearch.searchLocation(req.query.name);
+	context.location = array2;
+	var array3 = testSearch.searchType(req.query.name);
+	context.type = array3;
+	*/
     res.render('resultspage',context); 
+});
+
+//TO DO: POST from results page
+app.post('/results', function (req, res) {
+    var payload = document.getElementById("anchor").href;
+    res.render('charitypage',payload); 
+
+});
+
+//TO DO: Charity Page
+app.get('/charityinfo', function (req, res) {
+    var context = {};
+    context.title = "Charity Information";
+	
+	var charInfo = testSearch.searchCharities(req.query.charityName);
+	context.info = charInfo[0];
+	//console.log(context.info["name"]);
+    res.render('charitypage',context); 
 
 });
 
@@ -68,5 +91,5 @@ app.use(function(req,res){
   });
   
   app.listen(app.get('port'), function(){
-    console.log('Express started on (# wrong->?) flipx.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
+    console.log('Express started on flip#.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
   });
