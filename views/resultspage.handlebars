@@ -1,6 +1,5 @@
 <!-- (Ju) Returns search results depending on the type of search methods (by keyword, by location, by type)-->
-<h1 style="text-align:center">Search Results</h1>
-
+<h1 style="text-align:center">Search Results:</h1>
 <div>
    <table id="tableid1" class="table table-hover">
    <thead>
@@ -10,7 +9,7 @@
    </tr></thead>
    <tbody>
   {{#each results}}
-    <tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+    <tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:3636/charityinfo?charityName={{this.charityName}}">
 		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
@@ -18,12 +17,16 @@
   {{/each}}
 {{/if}}
 
+{{#unless results}}
+<h1 style="text-align:center">No results found, please modify your search. </h1>
+{{/unless}}
+
 {{#if location}}
 	<th>Charity by Location</th>
 	</tr></thead>
  	<tbody>
   {{#each location}}
-  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:3636/charityinfo?charityName={{this.charityName}}">
 		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
@@ -36,7 +39,7 @@
  	</tr></thead>
  	<tbody>
  {{#each type}}
-  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:3636/charityinfo?charityName={{this.charityName}}">
 		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
@@ -47,8 +50,7 @@
  </table>
 </div>
 
-<input type="button" value="Edit Search" onclick="history.back(-1)" />
-
+<center> <input type="button" value="Edit Search" onclick="history.back(-1)" /> </center>
 
 <!-- Cody's code
 <div>

@@ -47,13 +47,15 @@ module.exports = class Search {
 		var array = [];
 		for (var i = 0; i < cdb.length; i++){
 			var name = cdb[i]["charityName"];
+            //console.log(cdb[i]["charityName"]);
 			var tag = cdb[i]["tagLine"];
 			var mission = cdb[i]["mission"]
 			if (name.indexOf(keyword) != -1 || tag.indexOf(keyword) != -1 || mission.indexOf(keyword) != -1){
-				console.log(name);
+				//console.log(name);
 				array.push(this.getCharity(i));
 			}
 		}
+        //console.log(array);
 		return array;
 	}
 
@@ -62,7 +64,7 @@ module.exports = class Search {
     searchLocation(keyword){
         var array = [];
         for (var i = 0; i < cdb.length; i++){
-            var name = cdb[i][charityName];
+            var name = cdb[i]["charityName"];
             var city = cdb[i]["mailingAddress.city"];
             var state = cdb[i]["mailingAddress.stateOrProvince"];
             if (city.indexOf(keyword) != -1 || state.indexOf(keyword) != -1){
