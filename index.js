@@ -3,7 +3,6 @@ Group 29
 CS361
 March 5, 2018
 Part of Assignment 6 implementation Requirements
-
 This will be our main file. Eventually we will type run forever start index.js and we will be able to acces that website
 */
 
@@ -44,17 +43,14 @@ app.get('/', function (req, res, next) {
 
 //Results Page
 app.get('/results', function (req, res, next) {
-    //var context = {title:"Search Results",body:JSON.stringify(testSearch.getCharity(3))};
-    var context = {};
+	var context = {};
     context.title = "Search Results";
     var array1 = testSearch.searchCharities(req.query.name);
 	context.results = array1;
-	/* Attempt to search by location and search by type (JU)
-	var array2 = testSearch.searchLocation(req.query.name);
+	var array2 = testSearch.searchLocation(req.query.location);
 	context.location = array2;
-	var array3 = testSearch.searchType(req.query.name);
-	context.type = array3;
-	*/
+	var array3 = testSearch.searchType(req.query.type);
+	context.type = array3;	
     res.render('resultspage',context); 
 });
 
