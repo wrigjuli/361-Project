@@ -49,12 +49,13 @@ app.get('/results', function (req, res, next) {
     context.title = "Search Results";
     var array1 = testSearch.searchCharities(req.query.name);
 	context.results = array1;
-	/* Attempt to search by location and search by type (JU)
-	var array2 = testSearch.searchLocation(req.query.name);
+	/* Attempt to search by location and search by type (JU)*/
+	
+  var array2 = testSearch.searchLocation(req.query.name);
 	context.location = array2;
 	var array3 = testSearch.searchType(req.query.name);
 	context.type = array3;
-	*/
+	
     res.render('resultspage',context); 
 });
 

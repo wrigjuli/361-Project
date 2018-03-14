@@ -10,20 +10,24 @@
    </tr></thead>
    <tbody>
   {{#each results}}
-    <tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+    <tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:3636/charityinfo?charityName={{this.charityName}}">
 		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
   	<tr><td></td></tr>
   {{/each}}
 {{/if}}
+
+{{#unless results}}
+<strong><center> Sorry, that search didn't return any results, please modify your search and try again.</center></strong>
+{{/unless}}
 
 {{#if location}}
 	<th>Charity by Location</th>
 	</tr></thead>
  	<tbody>
   {{#each location}}
-  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:3636/charityinfo?charityName={{this.charityName}}">
 		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
@@ -31,18 +35,27 @@
   {{/each}}
 {{/if}}
 
+{{#unless location}}
+<strong><center> Sorry, that search didn't return any results, please modify your search and try again.</center></strong>
+{{/unless}}
+
+
 {{#if type}}
 	<th>Charity by type</th>
  	</tr></thead>
  	<tbody>
  {{#each type}}
-  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
+  	<tr id="{{this.ein}}"><td><a id="anchor" href="http://flip3.engr.oregonstate.edu:3636/charityinfo?charityName={{this.charityName}}">
 		<strong>{{this.charityName}}</strong></a></td></tr>
   	<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   	<tr><td>{{this.tagLine}}</td></tr>
   	<tr><td></td></tr>
   {{/each}}
 {{/if}}
+
+{{#unless type}}
+<strong><center> Sorry, that search didn't return any results, please modify your search and try again.</center></strong>
+{{/unless}}
   </tbody>
  </table>
 </div>

@@ -27,6 +27,11 @@ Example: Set a new variable equal to the mission of the 5th Charity. Uncomment b
 
 */
 
+//reference: https://stackoverflow.com/questions/196972/convert-string-to-title-case-with-javascript
+function toTitleCase(str)
+{
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
 
 module.exports = class Search {
     constructor(searchPhrase,database){
@@ -45,11 +50,21 @@ module.exports = class Search {
 	
 	searchCharities(keyword){
 		var array = [];
+            var lowerCaseKey = keyword.toLowerCase();
+            var upperCaseKey = keyword.toUpperCase();
+            //var firstCapKey = keyword.charAt(0).toUpperCase() + keyword.slice(1).toLowerCase();
+            var firstCapKey = toTitleCase(keyword)
+            console.log(lowerCaseKey);
+            console.log(upperCaseKey);
+            console.log(firstCapKey);
 		for (var i = 0; i < cdb.length; i++){
 			var name = cdb[i]["charityName"];
 			var tag = cdb[i]["tagLine"];
-			var mission = cdb[i]["mission"]
-			if (name.indexOf(keyword) != -1 || tag.indexOf(keyword) != -1 || mission.indexOf(keyword) != -1){
+			var mission = cdb[i]["mission"];
+			if (name.indexOf(keyword) != -1 || tag.indexOf(keyword) != -1 || mission.indexOf(keyword) != -1 || 
+                name.indexOf(lowerCaseKey) != -1 || tag.indexOf(lowerCaseKey) != -1 || mission.indexOf(lowerCaseKey) != -1 ||
+                name.indexOf(upperCaseKey) != -1 || tag.indexOf(upperCaseKey) != -1 || mission.indexOf(upperCaseKey) != -1 ||
+                name.indexOf(firstCapKey) != -1 || tag.indexOf(firstCapKey) != -1 || mission.indexOf(firstCapKey) != -1){
 				console.log(name);
 				array.push(this.getCharity(i));
 			}
@@ -62,9 +77,9 @@ module.exports = class Search {
     searchLocation(keyword){
         var array = [];
         for (var i = 0; i < cdb.length; i++){
-            var name = cdb[i][charityName];
-            var city = cdb[i]["mailingAddress.city"];
-            var state = cdb[i]["mailingAddress.stateOrProvince"];
+            var name = cdb[i]["charityName"];
+            var city = cdb[i]["mailingAddress"]["city"];
+            var state = cdb[i]["mailingAddress"]["stateOrProvince"];
             if (city.indexOf(keyword) != -1 || state.indexOf(keyword) != -1){
                 array.push(this.getCharity(i));
             }
@@ -77,9 +92,9 @@ module.exports = class Search {
     searchType(keyword){
         var array = [];
         for (var i = 0; i < cdb.length; i++){
-            var name = cdb[i][charityName];
-            var category = cdb[i]["category.categoryName"];
-            var cause = cdb[i]["cause.causeName"];
+            var name = cdb[i]["charityName"];
+            var category = cdb[i]["category"]["categoryName"];
+            var cause = cdb[i]["cause"]["causeName"];
             if (category.indexOf(keyword) != -1 || cause.indexOf(keyword) != -1){
                 console.log(name);
                 array.push(this.getCharity(i));
