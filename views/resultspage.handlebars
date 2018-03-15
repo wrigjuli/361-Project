@@ -17,8 +17,12 @@
   			<tr><td>{{this.tagLine}}</td></tr>
   			<tr><td></td></tr>
   		{{/each}}
-	{{/if}}	
-
+  	{{/if}}
+	
+	{{#unless results}}
+		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#0078FF">keyword(s)</font> and try again.</center></strong>
+	{{/unless}}
+	
 	{{#if location}}
 		<th>Charity by Location</th>
 		</tr>
@@ -32,7 +36,10 @@
   		<tr><td></td></tr>
   		{{/each}}
 	{{/if}}
-
+	{{#unless location}}
+		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#003EFF">location</font> and try again.</center></strong>
+	{{/unless}}
+	
 	{{#if type}}
 		<th>Charity by Type</th>
  		</tr>
@@ -46,12 +53,9 @@
   		<tr><td></td></tr>
   	{{/each}}
 	{{/if}}
-
-	
-	<!--{{#unless results}}
-		<strong><center> Sorry, that search didn't return any results, please modify your search and try again.</center></strong>
+	{{#unless type}}
+		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#0B05CB">charity type</font> and try again.</center></strong>
 	{{/unless}}
-	-->
 	</tbody>
  </table>
 </div>
