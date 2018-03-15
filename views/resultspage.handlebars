@@ -4,7 +4,15 @@
    <table id="tableid1" class="table table-hover">
 	<thead>
    		<tr>
-
+	{{#unless results}}
+		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#0078FF">keyword(s)</font> and try again.</center></strong>
+	{{/unless}}
+	{{#unless type}}
+		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#0B05CB">charity type</font> and try again.</center></strong>
+	{{/unless}}
+		{{#unless location}}
+		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#003EFF">location</font> and try again.</center></strong>
+	{{/unless}}
 	{{#if results}}
 			<th>Charity by Keyword</th>
 		</tr>
@@ -13,16 +21,15 @@
   		{{#each results}}
     		<tr id="{{this.ein}}"><td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
 			<strong>{{this.charityName}}</strong></a></td></tr>
-  			<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
+  			<!--<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   			<tr><td>{{this.tagLine}}</td></tr>
-  			<tr><td></td></tr>
+  			<tr><td></td></tr>-->
   		{{/each}}
+  		<tr><td></td></tr>
   	{{/if}}
 	
-	{{#unless results}}
-		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#0078FF">keyword(s)</font> and try again.</center></strong>
-	{{/unless}}
-	
+
+	<br>
 	{{#if location}}
 		<th>Charity by Location</th>
 		</tr>
@@ -31,14 +38,14 @@
   		{{#each location}}
   		<tr id="{{this.ein}}"><td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
 			<strong>{{this.charityName}}</strong></a></td></tr>
-  		<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
+  		<!--<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   		<tr><td>{{this.tagLine}}</td></tr>
-  		<tr><td></td></tr>
+  		<tr><td></td></tr>-->
   		{{/each}}
+  		<tr><td></td></tr>
 	{{/if}}
-	{{#unless location}}
-		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#003EFF">location</font> and try again.</center></strong>
-	{{/unless}}
+	<br>
+
 	
 	{{#if type}}
 		<th>Charity by Type</th>
@@ -48,14 +55,13 @@
  	{{#each type}}
   		<tr id="{{this.ein}}"><td><a href="http://flip3.engr.oregonstate.edu:46011/charityinfo?charityName={{this.charityName}}">
 			<strong>{{this.charityName}}</strong></a></td></tr>
-  		<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
+  		<!--<tr><td><a href="{{this.websiteURL}}" style="color:green;">{{this.websiteURL}}</td></tr>
   		<tr><td>{{this.tagLine}}</td></tr>
-  		<tr><td></td></tr>
+  		<tr><td></td></tr>-->
   	{{/each}}
+  	<tr><td></td></tr>
 	{{/if}}
-	{{#unless type}}
-		<strong><center> Sorry, that search didn't return any results, please modify your <font color="#0B05CB">charity type</font> and try again.</center></strong>
-	{{/unless}}
+
 	</tbody>
  </table>
 </div>

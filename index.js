@@ -61,6 +61,8 @@ app.get('/charityinfo', function (req, res) {
 	var charInfo = testSearch.searchCharities(req.query.charityName);
 	context.info = charInfo[0];
 	//console.log(context.info["name"]);
+	var num1 = 5;
+	context.num = num1;
     res.render('charitypage',context); 
 });
 

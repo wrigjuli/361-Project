@@ -47,6 +47,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 85.5,
+       financial: 79.72,
+       transparency: 97.00,
        ratingID: 124354,
        publicationDate: '2017-10-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -89,6 +91,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 100,
+	   financial: 100,
+       transparency: 100,
        ratingID: 127046,
        publicationDate: '2017-12-22T05:00:00.000Z',
        ratingImage: [Object],
@@ -131,6 +135,8 @@ var charityArray = [
        streetAddress2: 'Suite 120' },
     currentRating: 
      { score: 87.15,
+       financial: 83.24,
+       transparency: 93.00,
        ratingID: 123392,
        publicationDate: '2017-08-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -173,6 +179,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 95.59,
+       financial: 93.77,
+       transparency: 100,
        ratingID: 126859,
        publicationDate: '2018-02-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -182,7 +190,7 @@ var charityArray = [
     tagLine: 'We\'re for youth development, healthy living and social responsibility.',
     charityName: 'YMCA of Greater Seattle',
     ein: '910482710',
-    mission: 'Mission: Building a community where all people, especially the young, are encouraged to develop their fullest potential in spirit, mind and body.<br><br>Our Cause: Strengthening community is our cause. The Y makes accessible the support and opportunities that empower people to learn, grow and thrive - and we\'ve done this since 1876.<br><br>Our neighbors in King and south Snohomish counties work with us to deliver positive change to over 200,000 people each year. With your help we make sure that people in need have access to opportunities at our 13 branches and two residential camps.<br><br>The Y is dedicated to responsible stewardship of your generous donations. We are efficient and effective. With your help, we provide measurable impact.',
+    mission: 'Mission: Building a community where all people, especially the young, are encouraged to develop their fullest potential in spirit, mind and body.Our Cause: Strengthening community is our cause. The Y makes accessible the support and opportunities that empower people to learn, grow and thrive - and we\'ve done this since 1876.Our neighbors in King and south Snohomish counties work with us to deliver positive change to over 200,000 people each year. With your help we make sure that people in need have access to opportunities at our 13 branches and two residential camps.The Y is dedicated to responsible stewardship of your generous donations. We are efficient and effective. With your help, we provide measurable impact.',
     websiteURL: 'http://www.seattleymca.org',
     activeAdvisories: { _rapid_links: [Object] },
     removedAdvisories: { _rapid_links: [Object] },
@@ -215,6 +223,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 90.52,
+       financial: 92.36,
+       transparency: 89.00,
        ratingID: 126691,
        publicationDate: '2018-02-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -257,6 +267,8 @@ var charityArray = [
        streetAddress2: 'Suite 2/4' },
     currentRating: 
      { score: 83.35,
+       financial: 86.10,
+       transparency: 81.00,
        ratingID: 125311,
        publicationDate: '2017-11-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -299,6 +311,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 89.92,
+       financial: 85.75,
+       transparency: 100,
        ratingID: 129351,
        publicationDate: '2018-03-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -341,6 +355,8 @@ var charityArray = [
        streetAddress2: 'Suite 3' },
     currentRating: 
      { score: 88.89,
+       financial: 84.81,
+       transparency: 96.00,
        ratingID: 123253,
        publicationDate: '2017-08-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -383,6 +399,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 77.96,
+       financial: 72.69,
+       transparency: 85.00,
        ratingID: 100140,
        publicationDate: '2017-06-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -425,6 +443,8 @@ var charityArray = [
        streetAddress2: '6th Floor' },
     currentRating: 
      { score: 71.46,
+	   financial: 66.17,
+       transparency: 78.00,
        ratingID: 125632,
        publicationDate: '2018-02-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -474,6 +494,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 98.12,
+       financial: 97.35,
+       transparency: 100,
        ratingID: 119532,
        publicationDate: '2017-05-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -483,7 +505,7 @@ var charityArray = [
     tagLine: 'The art of inspiring education.',
     charityName: 'DreamYard Project',
     ein: '133759661',
-    mission: 'DreamYard collaborates with Bronx youth, families and schools to build pathways to equity and opportunity through the arts.<br><br>DreamYard programs develop artistic voice, nurture young peoples\' desire to make change and cultivate the skills necessary to reach positive goals. By committing to sustained learning opportunities along an educational pathway, we support young people as they work toward higher learning, meaningful careers and social action. We believe that young people in the Bronx need a continuous set of supports to help them towards positive outcomes as they navigate their educational pathway. We have every expectation that through offering sustained and meaningful supports our youth will develop the tools to become creative and engaged citizens, life-long learners and the leaders and innovators of the 21st century.',
+    mission: 'DreamYard collaborates with Bronx youth, families and schools to build pathways to equity and opportunity through the arts.DreamYard programs develop artistic voice, nurture young peoples\' desire to make change and cultivate the skills necessary to reach positive goals. By committing to sustained learning opportunities along an educational pathway, we support young people as they work toward higher learning, meaningful careers and social action. We believe that young people in the Bronx need a continuous set of supports to help them towards positive outcomes as they navigate their educational pathway. We have every expectation that through offering sustained and meaningful supports our youth will develop the tools to become creative and engaged citizens, life-long learners and the leaders and innovators of the 21st century.',
     websiteURL: 'http://www.dreamyard.com',
     activeAdvisories: { _rapid_links: [Object] },
     removedAdvisories: { _rapid_links: [Object] },
@@ -516,6 +538,8 @@ var charityArray = [
        streetAddress2: 'Ground Floor' },
     currentRating: 
      { score: 89.99,
+       financial: 91.11,
+       transparency: 89.00,
        ratingID: 127729,
        publicationDate: '2017-12-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -565,6 +589,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 88.67,
+       financial: 84.27,
+       transparency: 97,
        ratingID: 129709,
        publicationDate: '2018-02-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -614,6 +640,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 85.68,
+      financial: 83.00,
+       transparency: 89.00,
        ratingID: 119172,
        publicationDate: '2017-04-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -656,6 +684,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 88.58,
+       financial: 88.18,
+       transparency: 89.00,
        ratingID: 120218,
        publicationDate: '2017-05-01T04:00:00.000Z',
        ratingImage: [Object],
@@ -698,6 +728,8 @@ var charityArray = [
        streetAddress2: null },
     currentRating: 
      { score: 83.75,
+       financial: 77.22,
+       transparency: 97.00,
        ratingID: 129819,
        publicationDate: '2018-03-01T05:00:00.000Z',
        ratingImage: [Object],
@@ -740,6 +772,8 @@ var charityArray = [
        streetAddress2: '18th Floor' },
     currentRating: 
      { score: 94.07,
+       financial: 92.64,
+       transparency: 96.00,
        ratingID: 119467,
        publicationDate: '2017-06-01T04:00:00.000Z',
        ratingImage: [Object],

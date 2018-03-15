@@ -1,9 +1,16 @@
 <!--Charity Information-->
 <h1 style="text-align:center">Charity Information</h1>
 <h4><strong>Charity Name:</strong> {{info.charityName}}</p></h4>
-<p><strong>Overall Score:</strong> {{info.currentRating.rating}}/5</p>
-<p><strong>Address:</strong> </br>{{info.mailingAddress.streetAddress1}}</br>
-{{info.mailingAddress.city}}, {{info.mailingAddress.stateOrProvince}}  {{info.mailingAddress.postalCode}}</p>
 <p><strong>Website:</strong> <a href="{{info.websiteURL}}" style="color:green;">{{info.websiteURL}}</a></p>
+<!--<p><strong>Address:</strong> </br>{{info.mailingAddress.streetAddress1}}</br>
+{{info.mailingAddress.city}}, {{info.mailingAddress.stateOrProvince}}  {{info.mailingAddress.postalCode}}</p>
+<p><strong>Category:</strong> {{info.category.categoryName}}</p>-->
 <p><strong>Charity Mission:</strong> {{info.mission}}</p>
+
+<h2 style="text-align:center">Charity Ratings</h2>
+<p style="text-align:center"><strong>Overall Score:</strong> {{info.currentRating.rating}}/5</p>
+<p style="text-align:center"><strong>Financial Rating:</strong> {{info.currentRating.financial}}/100</p>
+<p style="text-align:center"><strong>Transparency:</strong> {{info.currentRating.transparency}}/100</p>
+<p style="text-align:center"><strong>User Rating:</strong> {{info.currentRating.score}}/100</p>
+
 <input type="button" value="Back to search results" onclick="history.back(-1)"/>
